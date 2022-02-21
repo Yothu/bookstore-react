@@ -101,7 +101,10 @@ const Book = ({ data }) => {
           <Action>Edit</Action>
         </Actions>
       </div>
-      <div>asd</div>
+      <div>
+        <p>64%</p>
+        <p>Completed</p>
+      </div>
       <div>
         <CurrentChapter>Current Chapter</CurrentChapter>
         <Chapter>Chapter 17</Chapter>
