@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Book from './Book';
+import BookForm from './BookForm';
 
 const booksData = [
   {
@@ -38,6 +39,7 @@ const Books = () => {
   return (
     <Background>
       {bookList}
+      <BookForm />
     </Background>
   );
 };
