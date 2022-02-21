@@ -1,0 +1,4 @@
+.action-list button + button {
+  border-left: 1px solid gray;
+  padding-left: 0.7rem;
+}
