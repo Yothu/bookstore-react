@@ -45,15 +45,18 @@ const Book = ({ data }) => {
     color: #4386bf;
   `;
 
-  const Actions = styled.ul`
+  const Actions = styled.div`
     display: flex;
     list-style: none;
     margin: 1rem 0 0 0;
     padding: 0;
   `;
 
-  const Action = styled.li`
+  const Action = styled.button`
     padding-right: 0.7rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
     color: #4386bf;
   `;
 
