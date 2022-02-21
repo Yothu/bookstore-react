@@ -7,7 +7,6 @@ const Book = ({ data }) => {
     display: grid;
     grid-template-columns: 40% 30% 30%;
     padding: 1.5rem;
-    width: 100%;
     margin: 0.3rem 0rem;
     background-color: white;
     border-radius: 4px;

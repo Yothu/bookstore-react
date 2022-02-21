@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import uIcon from '../images/user.png';
 
 const Header = () => {
   const OuterHeader = styled.header`
@@ -14,6 +15,7 @@ const Header = () => {
     display: flex;
     margin-left: 5vw;
     margin-right: 5vw;
+    justify-content: space-between;
   `;
 
   const Title = styled.h1`
@@ -49,14 +51,28 @@ const Header = () => {
     color: '#121212',
   };
 
+  const PageTop = styled.div`
+    display: flex;
+  `;
+
+  const userIco = {
+    height: '2.8rem',
+    width: '2.8rem',
+  };
+
+  const UserIcon = () => <img src={uIcon} style={userIco} alt="user-logo" />;
+
   return (
     <OuterHeader>
       <InnerHeader>
-        <Title>Bookstore CMS</Title>
-        <LinksContainer>
-          <Link style={linkBtn} to="/">BOOKS</Link>
-          <Link style={linkBtn} to="/categories">CATEGORIES</Link>
-        </LinksContainer>
+        <PageTop>
+          <Title>Bookstore CMS</Title>
+          <LinksContainer>
+            <Link style={linkBtn} to="/">BOOKS</Link>
+            <Link style={linkBtn} to="/categories">CATEGORIES</Link>
+          </LinksContainer>
+        </PageTop>
+        <UserIcon />
       </InnerHeader>
     </OuterHeader>
   );
