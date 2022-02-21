@@ -23,7 +23,6 @@ const Header = () => {
     width: 15rem;
     height: 2.313rem;
     margin: 0.375rem 2.938rem 0.125rem 0;
-    /* font-family: Montserrat; */
     font-size: 1.875rem;
     font-weight: bold;
     font-stretch: normal;
@@ -41,7 +40,6 @@ const Header = () => {
   const linkBtn = {
     paddingLeft: '0.5rem',
     paddingRight: '0.5rem',
-    // fontFamily: 'Montserrat',
     fontSize: '0.82rem',
     fontWeight: 'normal',
     fontStretch: 'normal',

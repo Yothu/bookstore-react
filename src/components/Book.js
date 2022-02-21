@@ -21,7 +21,6 @@ const Book = ({ data }) => {
 
   const Genre = styled.p`
     opacity: 0.5;
-    /* font-family: Montserrat; */
     font-size: 0.875rem;
     font-weight: bold;
     margin: 0 0 0.4rem 0;
@@ -29,7 +28,6 @@ const Book = ({ data }) => {
   `;
 
   const Title = styled.h3`
-    /* font-family: RobotoSlab; */
     font-size: 1.375rem;
     font-weight: bold;
     letter-spacing: -0.2px;
@@ -38,7 +36,6 @@ const Book = ({ data }) => {
   `;
 
   const Author = styled.p`
-    /* font-family: RobotoSlab; */
     font-size: 0.875rem;
     font-weight: 300;
     margin: 0rem;
@@ -62,7 +59,6 @@ const Book = ({ data }) => {
 
   const CurrentChapter = styled.p`
     opacity: 0.5;
-    /* font-family: RobotoSlab; */
     font-size: 0.813rem;
     font-weight: 300;
     letter-spacing: -0.4px;
@@ -70,14 +66,12 @@ const Book = ({ data }) => {
   `;
 
   const Chapter = styled.p`
-    /* font-family: RobotoSlab; */
     font-size: 1rem;
     font-weight: 300;
     margin: 0 0 1rem 0;
   `;
 
   const UpdateButton = styled.button`
-    /* font-family: RobotoSlab; */
     font-size: 0.813rem;
     font-weight: 300;
     letter-spacing: 0.5px;

@@ -6,7 +6,6 @@ const BookForm = () => {
   `;
 
   const AddBook = styled.h2`
-    /* font-family: Montserrat; */
     font-size: 1.25rem;
     font-weight: bold;
     letter-spacing: -0.18px;

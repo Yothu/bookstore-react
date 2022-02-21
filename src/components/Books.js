@@ -25,7 +25,6 @@ const booksData = [
 
 const Books = () => {
   const Background = styled.div`
-    /* background-color: #fafafa; */
     background-color: lightblue;
     padding-left: 5vw;
     padding-right: 5vw;
