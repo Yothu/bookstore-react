@@ -11,6 +11,7 @@ const BookList = () => {
           <Book
             title={book.title}
             author={book.author}
+            genre={book.genre}
             key={book.id}
             id={book.id}
           />

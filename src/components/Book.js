@@ -82,7 +82,12 @@ const UpdateButton = styled.button`
   border: none;
 `;
 
-const Book = ({ id, title, author }) => {
+const Book = ({
+  id,
+  title,
+  author,
+  genre,
+}) => {
   const dispatch = useDispatch();
 
   const removeBookFromStore = (e) => {
@@ -94,7 +99,7 @@ const Book = ({ id, title, author }) => {
     <DataContainer id={id}>
       <div>
         <Data>
-          <Genre>Genre</Genre>
+          <Genre>{genre}</Genre>
           <Title>{title}</Title>
           <Author>{author}</Author>
         </Data>
@@ -121,6 +126,7 @@ Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
 };
 
 export default Book;
