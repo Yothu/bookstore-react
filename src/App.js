@@ -8,16 +8,14 @@ const WholePage = styled.div`
   min-height: 100vh;
 `;
 
-function App() {
-  return (
-    <WholePage>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/categories" element={<Categories />} />
-      </Routes>
-    </WholePage>
-  );
-}
+const App = () => (
+  <WholePage>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Books />} />
+      <Route path="/categories" element={<Categories />} />
+    </Routes>
+  </WholePage>
+);
 
 export default App;
