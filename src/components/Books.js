@@ -3,14 +3,13 @@ import { useSelector } from 'react-redux';
 import Book from './Book';
 import BookForm from './BookForm';
 
+const Background = styled.div`
+padding: 1rem 5vw;
+min-height: 100vh;
+`;
+
 const Books = () => {
   const bookStore = useSelector((state) => state.booksReducer);
-
-  const Background = styled.div`
-    background-color: lightblue;
-    padding: 1rem 5vw;
-    min-height: 100vh;
-  `;
 
   const bookList = bookStore.map((book) => (
     <Book
@@ -24,7 +23,7 @@ const Books = () => {
   return (
     <Background>
       {bookList}
-      <BookForm />
+      {BookForm()}
     </Background>
   );
 };

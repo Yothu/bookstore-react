@@ -4,11 +4,11 @@ import Header from './components/Header';
 import Books from './components/Books';
 import Categories from './components/Categories';
 
-function App() {
-  const WholePage = styled.div`
-    min-height: 100vh;
-  `;
+const WholePage = styled.div`
+  min-height: 100vh;
+`;
 
+function App() {
   return (
     <WholePage>
       <Header />

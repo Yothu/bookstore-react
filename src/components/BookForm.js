@@ -4,19 +4,19 @@ import { v4 as generateID } from 'uuid';
 import { useState } from 'react';
 import { addBook } from '../redux/books/books';
 
+const FormContainer = styled.div`
+  border-top: 1px solid #e8e8e8;
+`;
+
+const AddBook = styled.h2`
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888;
+`;
+
 const BookForm = () => {
   const dispatch = useDispatch();
-
-  const FormContainer = styled.div`
-    border-top: 1px solid #e8e8e8;
-  `;
-
-  const AddBook = styled.h2`
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: -0.18px;
-    color: #888;
-  `;
 
   const [title, setTitle] = useState('');
   const id = generateID();
@@ -29,6 +29,7 @@ const BookForm = () => {
       author: 'Robert',
     };
     dispatch(addBook(newBook));
+    setTitle('');
   };
 
   return (
