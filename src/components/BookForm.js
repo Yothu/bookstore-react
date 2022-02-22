@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { addBook } from '../redux/books/books';
 
 const BookForm = () => {
+  const dispatch = useDispatch();
+
   const FormContainer = styled.div`
     border-top: 1px solid #e8e8e8;
   `;
@@ -12,13 +17,29 @@ const BookForm = () => {
     color: #888;
   `;
 
+  const [title, setTitle] = useState('');
+  const [id, setId] = useState(1);
+
+  const submitBookToStore = (e) => {
+    e.preventDefault();
+
+    const newBook = {
+      id,
+      title,
+      author: 'Robert',
+    };
+
+    dispatch(addBook(newBook));
+    setId(id + 1);
+  };
+
   return (
     <FormContainer>
       <AddBook>ADD NEW BOOK</AddBook>
-      <form>
-        <input type="text" name="name" placeholder="Book title" />
-        <select>
-          <option disabled selected>Category</option>
+      <form onSubmit={submitBookToStore}>
+        <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} placeholder="Book title" />
+        <select defaultValue="DEFAULT">
+          <option value="DEFAULT" disabled>Category</option>
         </select>
         <input type="submit" />
       </form>

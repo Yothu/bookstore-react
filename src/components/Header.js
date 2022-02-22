@@ -1,20 +1,18 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import uIcon from '../images/user.png';
+import uIcon from '../assets/images/user.png';
 
 const Header = () => {
   const OuterHeader = styled.header`
     width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid #e8e8e8;
     background-color: white;
   `;
 
   const InnerHeader = styled.nav`
     display: flex;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin: 0 5vw;
     justify-content: space-between;
   `;
 
@@ -25,10 +23,6 @@ const Header = () => {
     margin: 0.375rem 2.938rem 0.125rem 0;
     font-size: 1.875rem;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #0290ff;
   `;
 
@@ -38,13 +32,8 @@ const Header = () => {
   `;
 
   const linkBtn = {
-    paddingLeft: '0.5rem',
-    paddingRight: '0.5rem',
+    padding: '0 0.5rem',
     fontSize: '0.82rem',
-    fontWeight: 'normal',
-    fontStretch: 'normal',
-    fontStyle: 'normal',
-    lineHeight: 'normal',
     textDecoration: 'none',
     color: '#121212',
   };

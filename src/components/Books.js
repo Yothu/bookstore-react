@@ -1,23 +1,23 @@
+// import { Provider } from 'react-redux';
 import styled from 'styled-components';
+import { Provider } from 'react-redux';
 import Book from './Book';
 import BookForm from './BookForm';
+import store from '../redux/configureStore';
 
 const booksData = [
   {
     id: 1,
-    genre: 'Action',
     title: 'Rambo',
     author: 'Popeye',
   },
   {
     id: 2,
-    genre: 'Fantasy',
     title: 'Quack',
     author: 'Mack',
   },
   {
     id: 3,
-    genre: 'History',
     title: 'The Jump',
     author: 'Siluet',
   },
@@ -26,19 +26,34 @@ const booksData = [
 const Books = () => {
   const Background = styled.div`
     background-color: lightblue;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 5vw;
     min-height: 100vh;
   `;
 
-  const bookList = booksData.map((book) => (<Book data={book} key={book.id} />));
+  // const bookList = booksData.map((book) => (
+  //   <Book
+  //     title={book.title}
+  //     author={book.author}
+  //     key={book.id}
+  //     id={book.id}
+  //   />
+  // ));
 
   return (
     <Background>
-      {bookList}
-      <BookForm />
+      {
+        booksData.map((book) => (
+          <Book
+            title={book.title}
+            author={book.author}
+            key={book.id}
+            id={book.id}
+          />
+        ))
+      }
+      <Provider store={store}>
+        <BookForm />
+      </Provider>
     </Background>
   );
 };

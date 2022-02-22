@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import './Book.css';
 
-const Book = ({ data }) => {
+const Book = ({ id, title, author }) => {
   const DataContainer = styled.div`
     display: grid;
     grid-template-columns: 40% 30% 30%;
@@ -44,7 +44,6 @@ const Book = ({ data }) => {
 
   const Actions = styled.div`
     display: flex;
-    list-style: none;
     margin: 1rem 0 0 0;
     padding: 0;
   `;
@@ -82,13 +81,11 @@ const Book = ({ data }) => {
     border: none;
   `;
 
-  const { genre, title, author } = data;
-
   return (
-    <DataContainer>
+    <DataContainer id={id}>
       <div>
         <Data>
-          <Genre>{genre}</Genre>
+          <Genre>Genre</Genre>
           <Title>{title}</Title>
           <Author>{author}</Author>
         </Data>
@@ -99,12 +96,12 @@ const Book = ({ data }) => {
         </Actions>
       </div>
       <div>
-        <p>64%</p>
+        <p>Percent</p>
         <p>Completed</p>
       </div>
       <div>
         <CurrentChapter>Current Chapter</CurrentChapter>
-        <Chapter>Chapter 17</Chapter>
+        <Chapter>Chapter [Number]</Chapter>
         <UpdateButton>Update progress</UpdateButton>
       </div>
     </DataContainer>
@@ -112,8 +109,7 @@ const Book = ({ data }) => {
 };
 
 Book.propTypes = {
-  data: PropTypes.instanceOf(Object).isRequired,
-  genre: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
