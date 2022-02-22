@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import { v4 as generateID } from 'uuid';
 import { useState } from 'react';
 import { addBook } from '../redux/books/books';
 
@@ -18,19 +19,16 @@ const BookForm = () => {
   `;
 
   const [title, setTitle] = useState('');
-  const [id, setId] = useState(1);
+  const id = generateID();
 
   const submitBookToStore = (e) => {
     e.preventDefault();
-
     const newBook = {
       id,
       title,
       author: 'Robert',
     };
-
     dispatch(addBook(newBook));
-    setId(id + 1);
   };
 
   return (

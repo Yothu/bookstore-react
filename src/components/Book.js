@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import './Book.css';
+import { removeBook } from '../redux/books/books';
 
 const Book = ({ id, title, author }) => {
+  const dispatch = useDispatch();
+
   const DataContainer = styled.div`
     display: grid;
     grid-template-columns: 40% 30% 30%;
@@ -81,6 +85,11 @@ const Book = ({ id, title, author }) => {
     border: none;
   `;
 
+  const removeBookFromStore = (e) => {
+    e.preventDefault();
+    dispatch(removeBook(id));
+  };
+
   return (
     <DataContainer id={id}>
       <div>
@@ -91,7 +100,7 @@ const Book = ({ id, title, author }) => {
         </Data>
         <Actions className="action-list">
           <Action>Comment</Action>
-          <Action>Remove</Action>
+          <Action onClick={removeBookFromStore}>Remove</Action>
           <Action>Edit</Action>
         </Actions>
       </div>
@@ -109,7 +118,7 @@ const Book = ({ id, title, author }) => {
 };
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
