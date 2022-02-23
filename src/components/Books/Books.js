@@ -5,6 +5,7 @@ import BookList from '../BookList/BookList';
 const Background = styled.div`
   padding: 1rem 5vw;
   min-height: 100vh;
+  background-color: #fafafa;
 `;
 
 const Books = () => (
