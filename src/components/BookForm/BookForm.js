@@ -31,16 +31,16 @@ const BookForm = () => {
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [genre, setGenre] = useState('');
-  const id = generateID();
+  const [category, setCategory] = useState('');
+  const itemId = generateID();
 
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
-      id,
+      item_id: itemId,
       title,
       author,
-      genre,
+      category,
     };
     dispatch(addBook(newBook));
     setTitle('');
@@ -53,7 +53,7 @@ const BookForm = () => {
       <form onSubmit={submitBookToStore}>
         <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} placeholder="Book title" />
         <input type="text" onChange={(e) => setAuthor(e.target.value)} value={author} placeholder="Book author" />
-        <select defaultValue="DEFAULT" onChange={(e) => setGenre(e.target.value)}>
+        <select defaultValue="DEFAULT" onChange={(e) => setCategory(e.target.value)}>
           <option value="DEFAULT" disabled>Genre</option>
           {
             genres.map((genre) => (

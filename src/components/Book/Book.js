@@ -20,7 +20,7 @@ const Data = styled.div`
   align-content: flex-start;
 `;
 
-const Genre = styled.p`
+const Category = styled.p`
   opacity: 0.5;
   font-size: 0.875rem;
   font-weight: bold;
@@ -86,7 +86,7 @@ const Book = ({
   id,
   title,
   author,
-  genre,
+  category,
 }) => {
   const dispatch = useDispatch();
 
@@ -99,7 +99,7 @@ const Book = ({
     <DataContainer id={id}>
       <div>
         <Data>
-          <Genre>{genre}</Genre>
+          <Category>{category}</Category>
           <Title>{title}</Title>
           <Author>{author}</Author>
         </Data>
@@ -126,7 +126,7 @@ Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;
