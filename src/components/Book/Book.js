@@ -100,7 +100,7 @@ const Book = ({
         <Data>
           <Category>{category}</Category>
           <Title>{title}</Title>
-          <Author>Author</Author>
+          <Author>Dhaivy</Author>
         </Data>
         <Actions className="action-list">
           <Action>Comment</Action>
