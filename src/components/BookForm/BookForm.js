@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { v4 as generateID } from 'uuid';
 import { useState } from 'react';
-import { addBook } from '../redux/books/books';
+import { addBook } from '../../redux/books/books';
 
 const FormContainer = styled.div`
   border-top: 1px solid #e8e8e8;

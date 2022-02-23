@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import './Book.css';
-import { removeBook } from '../redux/books/books';
+import { removeBook } from '../../redux/books/books';
 
 const DataContainer = styled.div`
   display: grid;
