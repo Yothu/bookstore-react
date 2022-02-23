@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import uIcon from '../../assets/images/user.png';
+import '../Fonts.css';
 
 const OuterHeader = styled.header`
   width: 100%;
@@ -53,10 +54,10 @@ const Header = () => {
     <OuterHeader>
       <InnerHeader>
         <PageTop>
-          <Title>Bookstore CMS</Title>
+          <Title className="montserrat">Bookstore CMS</Title>
           <LinksContainer>
-            <Link style={linkBtn} to="/">BOOKS</Link>
-            <Link style={linkBtn} to="/categories">CATEGORIES</Link>
+            <Link className="montserrat" style={linkBtn} to="/">BOOKS</Link>
+            <Link className="montserrat" style={linkBtn} to="/categories">CATEGORIES</Link>
           </LinksContainer>
         </PageTop>
         <UserIcon />

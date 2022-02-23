@@ -12,10 +12,9 @@
 - React
 - Webpack
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+Check the [Live Demo](https://bookstore-dhaivy.netlify.app/) of this project!
 
 ## Getting Started
 
@@ -55,7 +54,8 @@ Finally, show the project through the browser with this command:
 
 ### Usage
 
-So far, there are no functionalities in this project.
+You can **add** Books with is *Title* and *Category* in the form at the bottom, then press *ADD BOOK*.
+Once you press the button a new **Book** will be created, you can **delete** them by pressing the *remove* button at the bottom part of each book.
 
 ## Author
 

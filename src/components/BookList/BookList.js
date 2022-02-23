@@ -1,7 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 import { getBooksFromAPI, listBooks } from '../../redux/books/books';
 import Book from '../Book/Book';
+
+const BooksContainer = styled.div`
+  padding-bottom: 2rem;
+`;
 
 const BookList = () => {
   const bookStore = useSelector((state) => state.booksReducer);
@@ -13,7 +18,7 @@ const BookList = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <BooksContainer>
       {
         bookStore.map((book) => (
           <Book
@@ -24,7 +29,7 @@ const BookList = () => {
           />
         ))
       }
-    </div>
+    </BooksContainer>
   );
 };
 

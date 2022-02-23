@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import './Book.css';
@@ -55,6 +57,9 @@ const Action = styled.button`
   cursor: pointer;
   border: none;
   color: #4386bf;
+  &:hover {
+    color: #0290ff;
+  }
 `;
 
 const CurrentChapter = styled.p`
@@ -80,6 +85,38 @@ const UpdateButton = styled.button`
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
   border: none;
+  cursor: pointer;
+`;
+
+const progressWheel = {
+  width: '4.25rem',
+  height: '4.25rem',
+};
+
+const ProgressContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const ChapterContainer = styled.div`
+  padding-left: 3rem;
+  border-left: 1px solid #e8e8e8;
+`;
+
+const Percent = styled.p`
+  margin: 0;
+  font-size: 2rem;
+`;
+
+const Completed = styled.p`
+  margin: 0;
+`;
+
+const PercentContainer = styled.div`
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Book = ({
@@ -98,25 +135,30 @@ const Book = ({
     <DataContainer id={id}>
       <div>
         <Data>
-          <Category>{category}</Category>
-          <Title>{title}</Title>
-          <Author>Dhaivy</Author>
+          <Category className="montserrat">{category}</Category>
+          <Title className="roboto-slab">{title}</Title>
+          <Author className="roboto-slab">Dhaivy</Author>
         </Data>
         <Actions className="action-list">
-          <Action>Comment</Action>
-          <Action onClick={removeBookFromStore}>Remove</Action>
-          <Action>Edit</Action>
+          <Action className="roboto-slab">Comment</Action>
+          <Action className="roboto-slab" onClick={removeBookFromStore}>Remove</Action>
+          <Action className="roboto-slab">Edit</Action>
         </Actions>
       </div>
-      <div>
-        <p>Percent</p>
-        <p>Completed</p>
-      </div>
-      <div>
-        <CurrentChapter>Current Chapter</CurrentChapter>
-        <Chapter>Chapter [Number]</Chapter>
-        <UpdateButton>Update progress</UpdateButton>
-      </div>
+      <ProgressContainer>
+        <div style={progressWheel}>
+          <CircularProgressbar value={65} />
+        </div>
+        <PercentContainer>
+          <Percent className="montserrat">65%</Percent>
+          <Completed className="montserrat">Completed</Completed>
+        </PercentContainer>
+      </ProgressContainer>
+      <ChapterContainer>
+        <CurrentChapter className="roboto-slab">Current Chapter</CurrentChapter>
+        <Chapter className="roboto-slab">Chapter [Number]</Chapter>
+        <UpdateButton className="roboto-slab">Update progress</UpdateButton>
+      </ChapterContainer>
     </DataContainer>
   );
 };
