@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import './Book.css';
-import { removeBook } from '../redux/books/books';
+import { deleteBookFromAPI } from '../../redux/books/books';
 
 const DataContainer = styled.div`
   display: grid;
@@ -20,7 +20,7 @@ const Data = styled.div`
   align-content: flex-start;
 `;
 
-const Genre = styled.p`
+const Category = styled.p`
   opacity: 0.5;
   font-size: 0.875rem;
   font-weight: bold;
@@ -85,23 +85,22 @@ const UpdateButton = styled.button`
 const Book = ({
   id,
   title,
-  author,
-  genre,
+  category,
 }) => {
   const dispatch = useDispatch();
 
   const removeBookFromStore = (e) => {
     e.preventDefault();
-    dispatch(removeBook(id));
+    dispatch(deleteBookFromAPI(id));
   };
 
   return (
     <DataContainer id={id}>
       <div>
         <Data>
-          <Genre>{genre}</Genre>
+          <Category>{category}</Category>
           <Title>{title}</Title>
-          <Author>{author}</Author>
+          <Author>Dhaivy</Author>
         </Data>
         <Actions className="action-list">
           <Action>Comment</Action>
@@ -125,8 +124,7 @@ const Book = ({
 Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;

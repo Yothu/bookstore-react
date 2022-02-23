@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import uIcon from '../assets/images/user.png';
+import uIcon from '../../assets/images/user.png';
 
 const OuterHeader = styled.header`
   width: 100%;
