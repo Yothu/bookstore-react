@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.id);
     case LIST_BOOK:
       return action.payload;
     default:
@@ -53,7 +53,7 @@ const postBookToAPI = (payload) => async (dispatch) => {
     },
   });
 
-  if (response.ok) {
+  if (await response.ok) {
     dispatch(addBook(payload));
   }
 };
@@ -67,7 +67,7 @@ const deleteBookFromAPI = (id) => async (dispatch) => {
     },
   });
 
-  if (response.ok) {
+  if (await response.ok) {
     dispatch(removeBook(id));
   }
 };
