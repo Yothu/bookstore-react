@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import './Book.css';
-import { removeBook } from '../../redux/books/books';
+import { deleteBookFromAPI } from '../../redux/books/books';
 
 const DataContainer = styled.div`
   display: grid;
@@ -91,7 +91,7 @@ const Book = ({
 
   const removeBookFromStore = (e) => {
     e.preventDefault();
-    dispatch(removeBook(id));
+    dispatch(deleteBookFromAPI(id));
   };
 
   return (

@@ -58,7 +58,21 @@ const postBookToAPI = (payload) => async (dispatch) => {
   }
 };
 
+const deleteBookFromAPI = (id) => async (dispatch) => {
+  const DELETE_API_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RJ6E8bGhw1ELJ9P3Dvx1/books/${id}`;
+  const response = await fetch(DELETE_API_URL, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    dispatch(removeBook(id));
+  }
+};
+
 export default reducer;
 export {
-  removeBook, addBook, getBooksFromAPI, postBookToAPI, listBooks,
+  removeBook, addBook, getBooksFromAPI, postBookToAPI, listBooks, deleteBookFromAPI,
 };
