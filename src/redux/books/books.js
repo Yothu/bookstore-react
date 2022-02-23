@@ -43,7 +43,7 @@ const getBooksFromAPI = async () => {
   return (books);
 };
 
-const postBooksToAPI = (payload) => async () => {
+const postBookToAPI = (payload) => async (dispatch) => {
   const POST_API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/RJ6E8bGhw1ELJ9P3Dvx1/books';
   const response = await fetch(POST_API_URL, {
     method: 'POST',
@@ -52,13 +52,13 @@ const postBooksToAPI = (payload) => async () => {
       'Content-Type': 'application/json',
     },
   });
-  const data = await response.json();
-  console.log('payload:', payload);
-  console.log('get:', await data);
-  return (data);
+
+  if (response.ok) {
+    dispatch(addBook(payload));
+  }
 };
 
 export default reducer;
 export {
-  removeBook, addBook, getBooksFromAPI, postBooksToAPI, listBooks,
+  removeBook, addBook, getBooksFromAPI, postBookToAPI, listBooks,
 };
