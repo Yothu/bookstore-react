@@ -14,8 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+Check the [Live Demo](https://bookstore-dhaivy.netlify.app/) of this project!
 
 ## Getting Started
 
