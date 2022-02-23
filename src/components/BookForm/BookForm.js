@@ -30,7 +30,6 @@ const BookForm = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
   const itemId = generateID();
 
@@ -39,12 +38,10 @@ const BookForm = () => {
     const newBook = {
       item_id: itemId,
       title,
-      author,
       category,
     };
     dispatch(addBook(newBook));
     setTitle('');
-    setAuthor('');
   };
 
   return (
@@ -52,7 +49,6 @@ const BookForm = () => {
       <AddBook>ADD NEW BOOK</AddBook>
       <form onSubmit={submitBookToStore}>
         <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} placeholder="Book title" />
-        <input type="text" onChange={(e) => setAuthor(e.target.value)} value={author} placeholder="Book author" />
         <select defaultValue="DEFAULT" onChange={(e) => setCategory(e.target.value)}>
           <option value="DEFAULT" disabled>Genre</option>
           {

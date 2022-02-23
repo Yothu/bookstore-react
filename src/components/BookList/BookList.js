@@ -9,8 +9,6 @@ const BookList = () => {
 
   useEffect(async () => {
     const APIbooks = await getBooksFromAPI();
-
-    console.log('books:', APIbooks);
     dispatch(listBooks(APIbooks));
   }, [dispatch]);
 
@@ -20,8 +18,7 @@ const BookList = () => {
         bookStore.map((book) => (
           <Book
             title={book.title}
-            author={book.author}
-            genre={book.category}
+            category={book.category}
             key={book.item_id}
             id={book.item_id}
           />

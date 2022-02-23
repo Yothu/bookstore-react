@@ -85,7 +85,6 @@ const UpdateButton = styled.button`
 const Book = ({
   id,
   title,
-  author,
   category,
 }) => {
   const dispatch = useDispatch();
@@ -101,7 +100,7 @@ const Book = ({
         <Data>
           <Category>{category}</Category>
           <Title>{title}</Title>
-          <Author>{author}</Author>
+          <Author>Author</Author>
         </Data>
         <Actions className="action-list">
           <Action>Comment</Action>
@@ -125,7 +124,6 @@ const Book = ({
 Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };
 
